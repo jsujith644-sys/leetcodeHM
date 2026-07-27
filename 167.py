@@ -1,20 +1,13 @@
 class Solution(object):
     def twoSum(self, numbers, target):
-        """
-        :type numbers: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-
-        left = 0
-        right = len(numbers) - 1
-
-        while left < right:
-            total = numbers[left] + numbers[right]
-
-            if total == target:
-                return [left + 1, right + 1]
-            elif total < target:
-                left += 1
-            else:
-                right -= 1
+        x = 0
+        i = len(numbers)-1
+        while x < i:
+                    current_sum = numbers[i] + numbers[x]
+                    if target < current_sum:
+                                            i -= 1
+                    elif target > current_sum:
+                                              x +=1
+                    else:
+                         return x +1, i+1
+                        
